@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<style>
+
+    body{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+        font-family: 'Poppins', sans-serif;
+        color:rgb(86, 129, 98);
+    }
+
+    #main{
+        display: flex; 
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #animation{
+        width: 280px;
+        height:280px;
+    }
+
+    .dino {
+        background-color:#16960B;
+        /* border:1px dashed black; */
+        display: inline-block;
+    }
+
+    #dino-body-back {
+        width: 60px;
+        height: 56px;
+        border-radius: 40% 0 0 60%;
+        animation: jump-back 0.5s ease-in-out infinite alternate;
+  
+    }
+
+    #dino-body-center{
+        width: 75px;
+        height: 56px;
+        border-radius: 100% / 60%;
+        position: relative;
+        left:-35px; 
+        animation: jump-center 0.5s ease-in-out infinite alternate;
+    }
+    #dino-body-front {
+        width: 60px;
+        height: 56px;
+        border-radius: 0 65% 70% 0;
+        position: relative;
+        right:70px;
+        animation: jump-front 0.5s ease-in-out infinite alternate;
+    }
+    #dino-backleg{
+        width: 20px;
+        height:25px;
+        border-radius: 0 0 5px 5px ;
+        position: relative;
+        top: -11px;
+        right:-70px;
+        animation: jump-backleg 0.5s ease-in-out infinite alternate;
+    }
+
+    #dino-frontleg{
+        width: 20px;
+        height:25px;
+        border-radius: 0 0 5px 5px ;
+        position: relative;
+        top:-14px;
+        right:-125px;
+        animation: jump-frontleg 0.5s ease-in-out infinite alternate;
+       
+    }
+
+    #dino-neck{
+        width: 40px;
+        height: 110px;
+        position: relative;
+        right:58px;
+        bottom:-123px;
+        border-radius: 20% 40% 50% 0;
+       
+        animation: jump-neck 0.5s ease-in-out infinite alternate;
+    }
+
+    #dino-head{
+        display: inline-block;
+        position: relative;
+        right:-140px;
+        top:-13px;
+        
+        animation: jump-head 0.5s ease-in-out infinite alternate;
+    }
+
+    #dino-tail{
+        background-color: none ;
+        display: inline-block;
+        position: relative;
+        top:-27px;
+        right: -25px;
+        animation: jump-tail 0.5s ease-in-out infinite alternate;
+    }
+
+    #pug-body{
+        display: inline-block;
+        position: relative;
+        bottom: -100px;
+        right: -50px;
+        z-index: 1;
+        animation: jump-pug-body 0.5s ease-in-out infinite alternate;
+    }
+
+    #pug-hand{
+        display: inline-block;
+        position: relative;
+        bottom:-65px;
+        left:-30px;
+        z-index: 1;
+        animation: jump-pug-hand 0.5s ease-in-out infinite alternate;
+    }
+
+    #pug-ear{
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        left:-20px;
+        bottom:-10px;
+        animation: jump-pug-ear 0.5s ease-in-out infinite alternate;
+    }
+    #pug-paw{
+        display: inline-block;
+        position: relative;
+        bottom:-55px;
+        left:-45px;
+        z-index: 1;
+        animation: jump-pug-paw 0.5s ease-in-out infinite alternate;
+    }
+
+    #warning{
+        display: block;
+        width:100%;
+        text-align:center;
+        padding:20%;
+    }
+
+
+    @keyframes jump-back {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(15deg);} 
+    }
+
+    @keyframes jump-center {
+        from {transform:translateY(0)}
+        to {transform:translateY(10px)}
+    }
+
+    @keyframes jump-front {
+    from {transform: rotate(0deg);}
+    to { transform: rotate(-15deg);} 
+    }
+
+    @keyframes jump-backleg {
+        from {transform: skew(0, 0);}
+        to {transform: skew(-15deg, 0) translateX(-5px);}
+        
+    }
+    @keyframes jump-frontleg {
+        from {transform: skew(0, 0);}
+        to {transform: skew(15deg, 0) translateX(5px);}
+        
+    }
+    
+    @keyframes jump-neck {
+        from{transform: rotateX(30deg) skewX(5deg); }
+        to { transform: rotate(0deg) skewX(2deg);}
+    }
+
+    @keyframes jump-head {
+        
+        from{transform: rotate(-5deg) translateY(-3px); }
+        to { transform: rotate(deg) ;}
+        
+    }
+
+    @keyframes jump-tail {
+        from{transform: rotateX(0deg); }
+        to {transform: rotate(10deg) translateY(-5px);}
+    }
+
+    @keyframes jump-pug-body {
+        from{transform: translateY(-20px) ; }
+        to {transform: rotate(10deg) ;}
+    }
+
+    @keyframes jump-pug-hand {
+        from{transform: translateY(-20px) ; }
+        to {transform: rotate(-20deg) ;}
+    }
+
+    @keyframes jump-pug-ear {
+        from{transform: translateY(-20px) ; }
+        to {transform: rotate(-20deg) translateX(10px) ;}
+    }
+    @keyframes jump-pug-paw {
+        from{transform: translateY(-10px) ; }
+        to {transform: rotate(-20deg) ;}
+    }
+
+</style>
+<body>
+<div id="main">
+    <div id="warning"> скачу к твоей маме </div>
+    <div id="animation">
+
+        <div id="pug-body">
+            <img src="pug_body.svg" alt="">
+         </div>
+    
+         <div id="pug-ear">
+            <img src="mops_ear.svg" alt="">
+         </div>
+    
+         <div id="pug-hand"> 
+            <img src="mops_hand.svg" alt="">
+         </div>
+    
+         <div id="pug-paw"> 
+            <img src="mops_paw.svg" alt="">
+         </div>
+    
+            <div class="dino" id="dino-neck"></div>
+            <div id="dino-head">
+                <img src="dino_head.svg" alt="dino-tail" > 
+            </div>
+            
+            <div style="position:relative; left:0px "></div>
+    
+            <div id="dino-tail">
+                <img src="dino_tail.svg" alt="dino-tail" > 
+               </div>
+    
+            <div class="dino" id="dino-body-back"></div>
+            <div class="dino" id="dino-body-center"> </div>
+            <div class="dino" id="dino-body-front"></div>
+            <div style="position:relative; left:0px "></div>
+    
+            <div class="dino" id="dino-backleg"></div>
+            <div class="dino" id="dino-frontleg"></div>
+    
+
+
+
+    </div>
+
+</div>
+
+    
+      
+        
+   
+</body>
+</html>
